@@ -13,6 +13,7 @@ RUN apt-get update && \
         redis-server \
         unzip \
         gnupg \
+        gettext \
         software-properties-common && \
     apt-get clean
 
