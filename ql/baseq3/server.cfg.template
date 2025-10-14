@@ -3,6 +3,7 @@
 set sv_hostname "R1sk Quake Live Server"
 set net_port "$QL_NET_PORT"
 set rconPassword "$QL_RCON_PASSWORD"
+set sv_idleExit "0"
 
 set g_voteFlags "0"
 set sv_allowDownload "1"
