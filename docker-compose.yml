@@ -19,8 +19,6 @@ services:
     environment:
       - QL_NET_PORT=${QL_NET_PORT}
       - QL_RCON_PASSWORD=${QL_RCON_PASSWORD}
-    volumes:
-      - ./ql/baseq3:/ql/baseq3
     restart: unless-stopped
 
   redis:
