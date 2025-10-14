@@ -9,9 +9,6 @@ services:
         STEAM_USERNAME: ${STEAM_USERNAME}
         STEAM_PASSWORD: ${STEAM_PASSWORD}
     container_name: quake_server
-    volumes:
-      - ./ql:/ql
-      - ./minqlx:/minqlx
     ports:
       - "${QL_NET_PORT}:${QL_NET_PORT}/udp"
       - "${QL_NET_PORT}:${QL_NET_PORT}/tcp"
