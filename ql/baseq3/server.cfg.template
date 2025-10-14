@@ -1,6 +1,7 @@
 // Quake Live Server Configuration
 
 set sv_hostname "R1sk Quake Live Server"
+set net_ip "0.0.0.0"
 set net_port "$QL_NET_PORT"
 set rconPassword "$QL_RCON_PASSWORD"
 set sv_idleExit "0"
