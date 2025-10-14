@@ -3,18 +3,24 @@ version: "3.8"
 services:
   ql-server:
     build: .
+    dockerfile: Dockerfile
+    args:
+      STEAM_USERNAME: ${STEAM_USERNAME}
+      STEAM_PASSWORD: ${STEAM_PASSWORD}
     container_name: quake_server
     volumes:
       - ./ql:/ql
       - ./minqlx:/minqlx
     ports:
-      - "27960:27960/udp"
-      - "28960:28960/tcp"
+      - "${QL_NET_PORT}:${QL_NET_PORT}/udp"
+      - "${QL_NET_PORT}:${QL_NET_PORT}/tcp"
     depends_on:
       - redis
     environment:
-      - QL_NET_PORT=27960
-      - QL_RCON_PASSWORD=strong_rcon_pass
+      - QL_NET_PORT=${QL_NET_PORT}
+      - QL_RCON_PASSWORD=${QL_RCON_PASSWORD}
+    volumes:
+      - ./ql/baseq3:/ql/baseq3
     restart: unless-stopped
 
   redis:
