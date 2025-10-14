@@ -2,11 +2,12 @@ version: "3.8"
 
 services:
   ql-server:
-    build: .
-    dockerfile: Dockerfile
-    args:
-      STEAM_USERNAME: ${STEAM_USERNAME}
-      STEAM_PASSWORD: ${STEAM_PASSWORD}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        STEAM_USERNAME: ${STEAM_USERNAME}
+        STEAM_PASSWORD: ${STEAM_PASSWORD}
     container_name: quake_server
     volumes:
       - ./ql:/ql
