@@ -12,7 +12,8 @@ RUN mkdir -p /steamcmd && \
 
 # Установка QLDS
 RUN mkdir -p /ql && \
-    /steamcmd/steamcmd.sh +login anonymous +force_install_dir /ql +app_update 349090 validate +quit
+    /steamcmd/steamcmd.sh +force_install_dir /ql +login anonymous +app_update 349090 validate +quit
+
 
 # Копируем файлы сервера
 COPY ./ql /ql
