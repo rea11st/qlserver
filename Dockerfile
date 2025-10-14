@@ -14,6 +14,10 @@ RUN mkdir -p /steamcmd && \
 COPY ./ql /ql
 COPY ./minqlx /ql/minqlx
 
+# Логин через build args
+ARG STEAM_USERNAME
+ARG STEAM_PASSWORD
+
 # Установка QLDS
 RUN /steamcmd/steamcmd.sh +force_install_dir /ql +login ${QL_STEAM_USER} ${QL_STEAM_PASSWORD} +app_update 349090 validate +quit
 
