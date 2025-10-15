@@ -37,3 +37,4 @@ set sv_tags "msk"
 set sv_mapPoolFile "mappool.txt"
 
 set serverstartup "startRandomMap"
+set g_weaponRespawn "1"
