@@ -30,7 +30,7 @@ set sv_serverType "2"
 set zmq_rcon_enable "1"
 set zmq_rcon_ip "$QL_NET_IP"
 
-set sv_tags "msk"
+set sv_tags "msk, stats, ffa"
 
 set sv_mapPoolFile "mappool.txt"
 
