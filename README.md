@@ -1,1 +1,1 @@
-# qlserver for all
+# qlserver for all warriors
