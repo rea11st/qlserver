@@ -18,6 +18,7 @@ set net_strict "0"
 set qlx_commandPrefix "!"
 set qlx_database "Redis"
 set qlx_pluginsPath "minqlx/plugins"
+set qlx_plugins "uberstats"
 set qlx_redisAddress "redis"
 set qlx_redisDatabase 0
 set qlx_redisPassword ""
