@@ -41,3 +41,7 @@ set g_weaponRespawn "1"
 set g_gametype 0
 set sv_factory "ffa_hector"
 set sv_mapPoolFile "mappool_ffa.txt"
+
+// qlstast
+set zmq_stats_enable "1"
+set zmq_stats_password "$QL_STATS_PASSWORD"
