@@ -38,3 +38,4 @@ set sv_mapPoolFile "mappool.txt"
 
 set serverstartup "startRandomMap"
 set g_weaponRespawn "1"
+set g_gametype 0
