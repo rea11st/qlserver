@@ -39,3 +39,5 @@ set sv_mapPoolFile "mappool.txt"
 set serverstartup "startRandomMap"
 set g_weaponRespawn "1"
 set g_gametype 0
+set sv_factory "ffa_hector"
+set sv_mapPoolFile "mappool_ffa.txt"

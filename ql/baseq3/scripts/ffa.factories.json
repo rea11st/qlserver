@@ -1,0 +1,19 @@
+[
+  {
+    "id": "ffa_hector",
+    "title": "FFA Custom",
+    "description": "Free For All with 1s weapon respawn",
+    "author": "unknown",
+    "basegt": "ffa",
+    "cvars": {
+      "g_gametype": "0",
+      "g_weaponRespawn": "1",
+      "timelimit": "15",
+      "fraglimit": "50",
+      "g_voteFlags": "0",
+      "g_allowVote": "1",
+      "sv_hostname": "Hector Quake FFA",
+      "sv_mapPoolFile": "mappool_ffa.txt"
+    }
+  }
+]
