@@ -29,8 +29,6 @@ set sv_master "1"
 set sv_serverType "2"
 set zmq_rcon_enable "1"
 set zmq_rcon_ip "$QL_NET_IP"
-set zmq_stats_enable "1"
-set zmq_stats_ip "$QL_NET_IP"
 
 set sv_tags "msk"
 
@@ -45,3 +43,4 @@ set sv_mapPoolFile "mappool_ffa.txt"
 // qlstast
 set zmq_stats_enable "1"
 set zmq_stats_password "$QL_STATS_PASSWORD"
+set zmq_stats_ip "$QL_NET_IP"
