@@ -17,6 +17,7 @@ services:
     environment:
       - QL_NET_PORT=${QL_NET_PORT}
       - QL_RCON_PASSWORD=${QL_RCON_PASSWORD}
+      - QL_NET_IP=${QL_NET_IP}
     restart: unless-stopped
 
   redis:
