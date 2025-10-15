@@ -1,7 +1,7 @@
 // Quake Live Server Configuration
 
 set sv_hostname "Hector Quake Live Server"
-set net_ip "$QL_NET_IP"
+set net_ip ""
 set net_port "$QL_NET_PORT"
 set rconPassword "$QL_RCON_PASSWORD"
 set sv_idleExit "0"
@@ -30,3 +30,9 @@ set zmq_rcon_enable "1"
 set zmq_rcon_ip "$QL_NET_IP"
 set zmq_stats_enable "1"
 set zmq_stats_ip "$QL_NET_IP"
+
+set sv_tags "msk"
+
+set sv_mapPoolFile "mappool.txt"
+
+set serverstartup "startRandomMap"
