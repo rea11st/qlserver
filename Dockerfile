@@ -6,6 +6,8 @@ RUN apt-get update && \
     apt-get install -y lib32gcc-s1 curl ca-certificates python3 python3-pip redis-server unzip gnupg gettext software-properties-common && \
     apt-get clean
 
+RUN pip3 install pysftp
+
 RUN mkdir -p /steamcmd && \
     curl -s https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz | tar -xz -C /steamcmd
 
