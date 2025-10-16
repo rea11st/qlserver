@@ -37,7 +37,7 @@ RUN mkdir -p /qlserver/minqlx && \
 
 # Установка Python-зависимостей для minqlx
 COPY plugins/ /qlserver/minqlx/plugins/
-RUN pip3 install -r /qlserver/minqlx/requirements.txt
+RUN pip3 install websocket-client
 
 # Копируем скрипт запуска
 COPY entrypoint.sh /entrypoint.sh
