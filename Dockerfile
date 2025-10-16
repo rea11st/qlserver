@@ -27,7 +27,7 @@ RUN mkdir -p /ql && \
     git clone https://github.com/MinoMino/minqlx.git /minqlx && \
     cd /minqlx && \
     make && \
-    cp /minqlx/bin/minqlx.x64.so /ql/
+    cp -r /minqlx /ql/
 
 # Установка SteamCMD
 RUN mkdir -p /steamcmd && \
