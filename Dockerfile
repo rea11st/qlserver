@@ -60,11 +60,7 @@ RUN chmod +x /ql/run_server.sh /ql/run_server_x64.sh /entrypoint.sh
 # Устанавливаем рабочую директорию и запуск
 WORKDIR /ql
 
-# Переименовываем файл minqlx.x64.so в _minqlx.so
-RUN mv /ql/minqlx/minqlx.x64.so /ql/minqlx/_minqlx.so
-
-# Устанавливаем PYTHONPATH на /ql, чтобы import minqlx работал корректно
-ENV PYTHONPATH=/ql
+ENV PYTHONPATH=/ql/minqlx
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["./run_server.sh"]
