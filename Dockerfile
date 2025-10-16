@@ -60,7 +60,7 @@ RUN chmod +x /ql/run_server.sh /ql/run_server_x64.sh /entrypoint.sh
 # Устанавливаем рабочую директорию и запуск
 WORKDIR /ql
 
-ENV PYTHONPATH=/ql/minqlx
+ENV PYTHONPATH=/ql
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["./run_server.sh"]
