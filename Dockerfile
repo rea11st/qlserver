@@ -51,8 +51,9 @@ RUN /steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir 
 COPY ./ql /ql
 COPY ./entrypoint.sh /entrypoint.sh
 
-RUN mkdir -p /root/.quakelive/minqlx
-COPY ./minqlx /root/.quakelive/minqlx
+RUN mkdir -p /ql/minqlx/plugins
+COPY ./minqlx/minqlx.cfg /ql/minqlx/
+COPY ./minqlx/plugins /ql/minqlx/plugins/
 
 # Делаем исполняемые скрипты действительно исполняемыми
 RUN chmod +x /ql/run_server.sh /ql/run_server_x64.sh /entrypoint.sh
