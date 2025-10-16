@@ -24,11 +24,11 @@ RUN apt-get update && \
 RUN pip3 install pysftp
 
 # Клонируем minqlx (ядро и стандартные плагины)
-RUN mkdir -p /ql && \
-    git clone https://github.com/MinoMino/minqlx.git /minqlx && \
+RUN git clone https://github.com/MinoMino/minqlx.git /minqlx && \
     cd /minqlx && \
     make && \
-    cp -r /minqlx/bin/. /ql/
+    mkdir -p /ql/minqlx && \
+    cp -r bin/. /ql/minqlx
     
 RUN unzip -j -o /ql/minqlx.zip -d /ql/minqlx
 
