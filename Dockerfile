@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Установка зависимостей
+# Установка системных зависимостей
 RUN apt-get update && \
     apt-get install -y \
         lib32gcc-s1 \
@@ -24,11 +24,16 @@ RUN pip3 install pysftp
 # Клонируем minqlx (ядро и стандартные плагины)
 RUN git clone https://github.com/MinoMino/minqlx.git /ql/minqlx
 
+# Перемещаем ядро minqlx на нужный уровень
+RUN mv /ql/minqlx/python/minqlx /ql/minqlx/ && \
+    mv /ql/minqlx/python/version.py /ql/minqlx/ && \
+    rm -rf /ql/minqlx/python
+
 # Установка SteamCMD
 RUN mkdir -p /steamcmd && \
     curl -s https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz | tar -xz -C /steamcmd
 
-# Передаём аргументы Steam (будут заданы при сборке)
+# Передаём аргументы Steam (задать при сборке)
 ARG STEAM_USERNAME
 ARG STEAM_PASSWORD
 
@@ -39,13 +44,13 @@ RUN /steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir 
 COPY ./ql /ql
 COPY ./entrypoint.sh /entrypoint.sh
 
-# Копируем кастомные плагины поверх стандартных
+# Копируем свои плагины поверх дефолтных
 COPY ./minqlx/plugins /ql/minqlx/plugins
 
-# Делаем исполняемые скрипты действительно исполняемыми
+# Делаем скрипты исполняемыми
 RUN chmod +x /ql/run_server.sh /ql/run_server_x64.sh /entrypoint.sh
 
-# Устанавливаем рабочую директорию и запуск
+# Установка рабочей директории и команды запуска
 WORKDIR /ql
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["./run_server.sh"]
