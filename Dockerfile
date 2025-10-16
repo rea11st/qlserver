@@ -24,8 +24,11 @@ RUN apt-get update && \
 # Установка Python-зависимостей
 RUN pip3 install pysftp
 
-# Клонируем minqlx и собираем .so
-RUN git clone https://github.com/MinoMino/minqlx.git /minqlx && \
+# Сборка minqlx и копирование .so
+RUN apt-get update && \
+    apt-get install -y gcc make python3-dev && \
+    mkdir -p /ql && \
+    git clone https://github.com/MinoMino/minqlx.git /minqlx && \
     cd /minqlx && make && \
     cp /minqlx/bin/minqlx.x64.so /ql/
 
