@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PYTHONPATH=/minqlx
+ENV PYTHONPATH=/ql/minqlx
 
 # Установка зависимостей
 RUN apt-get update && \
