@@ -28,10 +28,9 @@ RUN git clone https://github.com/MinoMino/minqlx.git /minqlx && \
     cd /minqlx && \
     make && \
     mkdir -p /ql/minqlx && \
-    cp -r bin/. /ql/minqlx
+    cp -r bin/* /ql/minqlx && \
+    cp -r minqlx/* /ql/minqlx
     
-RUN unzip -j -o /ql/minqlx.zip -d /ql/minqlx
-
 # Установка SteamCMD
 RUN mkdir -p /steamcmd && \
     curl -s https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz | tar -xz -C /steamcmd
