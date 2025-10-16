@@ -25,6 +25,13 @@ WORKDIR /qlserver
 
 RUN /steamcmd/steamcmd.sh +login anonymous +force_install_dir /qlserver +app_update 349090 validate +quit
 
+# 🔥 Загрузка Steamworks SDK и копирование 64-битной libsteam_api.so
+RUN mkdir -p /steamworks && \
+    curl -sSL https://partner.steamgames.com/downloads/steamworks_sdk_157.zip -o /tmp/sdk.zip && \
+    unzip -q /tmp/sdk.zip -d /steamworks && \
+    cp /steamworks/steamworks_sdk_157/redistributable_bin/linux64/libsteam_api.so /qlserver/ && \
+    rm -rf /tmp/sdk.zip /steamworks
+
 # Установка minqlx
 RUN git clone https://github.com/MinoMino/minqlx.git /minqlx && \
     cd /minqlx && make
@@ -45,6 +52,9 @@ RUN chmod +x /entrypoint.sh
 
 # Копируем серверный конфиг (при необходимости)
 COPY server.cfg /qlserver/baseq3/server.cfg
+
+# Устанавливаем путь к библиотекам
+ENV LD_LIBRARY_PATH="/qlserver:$LD_LIBRARY_PATH"
 
 WORKDIR /qlserver
 
