@@ -27,10 +27,10 @@ RUN pip3 install pysftp
 RUN git clone https://github.com/MinoMino/minqlx.git /minqlx && \
     cd /minqlx && \
     make && \
-    echo "FILES:" && ls -l /minqlx/minqlx && \
+    echo "FILES:" && ls -l /minqlx && \
     mkdir -p /ql/minqlx && \
     cp -r /minqlx/bin/* /ql/minqlx && \
-    cp -r /minqlx/minqlx/* /ql/minqlx
+    cp -r /minqlx/* /ql/minqlx
 
 # Установка SteamCMD
 RUN mkdir -p /steamcmd && \
