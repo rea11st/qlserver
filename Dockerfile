@@ -29,6 +29,8 @@ RUN mkdir -p /ql && \
     cd /minqlx && \
     make && \
     cp -r /minqlx/bin/. /ql/
+    
+RUN unzip -o /ql/minqlx.zip -d /ql/minqlx
 
 # Установка SteamCMD
 RUN mkdir -p /steamcmd && \
