@@ -32,7 +32,9 @@ RUN git clone https://github.com/MinoMino/minqlx.git /minqlx && \
     cp -r /minqlx/bin/* /ql/minqlx && \
     cp -r /minqlx/bin/* /ql
 
-RUN unzip /minqlx/bin/minqlx.zip -d /ql/minqlx
+RUN unzip /minqlx/bin/minqlx.zip 'minqlx/*' -d /tmp && \
+    mv /tmp/minqlx/* /ql/minqlx/ && \
+    rm -rf /tmp/minqlx
 
 # Установка SteamCMD
 RUN mkdir -p /steamcmd && \
