@@ -44,7 +44,7 @@ ARG STEAM_USERNAME
 ARG STEAM_PASSWORD
 
 # Скачиваем Quake Live Dedicated Server
-RUN /steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +force_install_dir /ql +login ${STEAM_USERNAME} ${STEAM_PASSWORD} +app_update 349090 validate +quit
+RUN /steamcmd/steamcmd.sh +force_install_dir /ql +login ${STEAM_USERNAME} ${STEAM_PASSWORD} +app_update 349090 validate +quit
 
 # Копируем конфиги, скрипты сервера и entrypoint
 COPY ./ql /ql
