@@ -20,7 +20,7 @@ RUN apt-get update && \
     apt-get clean
 
 # Установка Python-зависимостей
-RUN pip3 install pysftp
+# RUN pip3 install pysftp
 
 # Клонируем minqlx (ядро и стандартные плагины)
 RUN git clone https://github.com/MinoMino/minqlx.git /minqlx && \
