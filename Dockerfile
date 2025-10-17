@@ -5,7 +5,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Установка зависимостей
 RUN apt-get update && \
     apt-get install -y \
-        lib32gcc-s1 \
         curl \
         ca-certificates \
         python3 \
@@ -16,6 +15,7 @@ RUN apt-get update && \
         gnupg \
         gettext \
         software-properties-common \
+        build-essential \
         git && \
     apt-get clean
 
