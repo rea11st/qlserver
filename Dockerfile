@@ -5,6 +5,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Установка зависимостей
 RUN apt-get update && \
     apt-get install -y \
+        lib32gcc1 \
+        lib32z1 \ 
+        lib32stdc++6 \
         curl \
         ca-certificates \
         python3 \
